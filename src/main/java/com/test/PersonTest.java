@@ -3,11 +3,18 @@ package com.test;
 import org.apache.commons.logging.Log;
 import org.junit.Test;
 
+import java.util.Arrays;
 import java.util.function.Predicate;
 
 import static org.junit.Assert.assertEquals;
 
 public class PersonTest {
+
+    public static final String[] MY_STATE_VALUES = {"PENDING", "PROCESSING", "PROCESSED"};
+    private static final int PROCESSED = 42, PENDING = 40, PROCESSING = 41;     
+    public String[] states(){
+        return Arrays.copyOf(MY_STATE_VALUES, MY_STATE_VALUES.length);
+    }
 
     @Test
     public void shouldReturnHelloWorld(){
